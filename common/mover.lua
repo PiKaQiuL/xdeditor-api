@@ -211,25 +211,25 @@ function Mover:remove() end
 ---
 ---只有当block设置为true时才可能触发此事件。在事件中返回true可以移除运动
 ---
----@field on_block? fun(self: self):boolean
+---@field on_block? fun(self: Mover):boolean
 ---
 ---完成事件
 ---
 ---当直线运动将distance跑完，或是追踪运动追上target后触发。比on_remove先触发
 ---
----@field on_finish? fun(self: self)
+---@field on_finish? fun(self: Mover)
 ---
 ---碰撞单位事件
 ---
 ---只有设置了hit_type后才可能触发此事件。在事件中返回true可以移除运动
 ---
----@field on_hit? fun(self: self, unit: Unit): boolean
+---@field on_hit? fun(self: Mover, unit: Unit): boolean
 ---
 ---移除事件
 ---
 ---运动被移除时触发此事件
 ---
----@field on_remove? fun(self: self)
+---@field on_remove? fun(self: Mover)
 ---
 
 
