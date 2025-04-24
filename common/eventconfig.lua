@@ -1,0 +1,74 @@
+---@meta EventConfig
+
+---@class base.Game
+---@field event fun(self: self, event: "单位-初始化", callback: fun(trg: Trigger, unit: Unit)):Trigger
+---@field event fun(self: self, event: "单位-创建", callback: fun(trg: Trigger, unit: Unit)):Trigger
+---@field event fun(self: self, event: "单位-死亡", callback: fun(trg: Trigger, dead: Unit, killer: Unit)):Trigger
+---@field event fun(self: self, event: "单位-移除", callback: fun(trg: Trigger, unit: Unit)):Trigger
+---@field event fun(self: self, event: "单位-复活", callback: fun(trg: Trigger, unit: Unit)):Trigger
+---@field event fun(self: self, event: "单位-获得状态", callback: fun(trg: Trigger, unit: Unit, buff: Buff)):Trigger
+---@field event fun(self: self, event: "单位-失去状态", callback: fun(trg: Trigger, unit: Unit, buff: Buff)):Trigger
+---@field event fun(self: self, event: "单位-购买物品", callback: fun(trg: Trigger, unit: Unit, name: string)):Trigger
+---@field event fun(self: self, event: "单位-出售物品", callback: fun(trg: Trigger, unit: Unit, slot: number)):Trigger
+---@field event fun(self: self, event: "单位-撤销物品", callback: fun(trg: Trigger, unit: Unit)):Trigger
+---@field event fun(self: self, event: "单位-发布命令", callback: fun(trg: Trigger, unit: Unit, command: string, target: Unit | Point | nil, state: number)):Trigger
+---@field event fun(self: self, event: "单位-执行命令", callback: fun(trg: Trigger, unit: Unit, command: string, target: Unit | Point | nil, state: number)):Trigger
+---@field event fun(self: self, event: "单位-失去物品", callback: fun(trg: Trigger, unit: Unit, item: Item)):Trigger
+---@field event fun(self: self, event: "单位-获得物品", callback: fun(trg: Trigger, unit: Unit, item: Item)):Trigger
+---@field event fun(self: self, event: "单位-移动", callback: fun(trg: Trigger, unit: Unit, lastPoint: Point, nextPoint: Point)):Trigger
+---@field event fun(self: self, event: "移动-开始", callback: fun(trg: Trigger, unit: Unit)):Trigger
+---@field event fun(self: self, event: "移动-结束", callback: fun(trg: Trigger, unit: Unit)):Trigger
+---@field event fun(self: self, event: "技能-获得", callback: fun(trg: Trigger, unit: Unit, skill: Skill)):Trigger
+---@field event fun(self: self, event: "技能-失去", callback: fun(trg: Trigger, unit: Unit, skill: Skill)):Trigger
+---@field event fun(self: self, event: "技能-施法开始", callback: fun(trg: Trigger, unit: Unit, cast: Skill)):Trigger
+---@field event fun(self: self, event: "技能-施法打断", callback: fun(trg: Trigger, unit: Unit, cast: Skill)):Trigger
+---@field event fun(self: self, event: "技能-施法引导", callback: fun(trg: Trigger, unit: Unit, cast: Skill)):Trigger
+---@field event fun(self: self, event: "技能-施法出手", callback: fun(trg: Trigger, unit: Unit, cast: Skill)):Trigger
+---@field event fun(self: self, event: "技能-施法完成", callback: fun(trg: Trigger, unit: Unit, cast: Skill)):Trigger
+---@field event fun(self: self, event: "技能-施法停止", callback: fun(trg: Trigger, unit: Unit, cast: Skill)):Trigger
+---@field event fun(self: self, event: "技能-冷却完成", callback: fun(trg: Trigger, unit: Unit, skill: Skill)):Trigger
+---@field event fun(self: self, event: "技能-施法失败", callback: fun(trg: Trigger, unit: Unit, cast: Skill, failedCode: number)):Trigger
+---@field event fun(self: self, event: "玩家-输入作弊码", callback: fun(trg: Trigger, player: Player, command: string)):Trigger
+---@field event fun(self: self, event: "玩家-输入聊天", callback: fun(trg: Trigger, player: Player, chat: string)):Trigger
+---@field event fun(self: self, event: "玩家-选择英雄", callback: fun(trg: Trigger, player: Player, name: string)):Trigger
+---@field event fun(self: self, event: "玩家-连入", callback: fun(trg: Trigger, player: Player, isReconnect: boolean)):Trigger
+---@field event fun(self: self, event: "玩家-断线", callback: fun(trg: Trigger, player: Player)):Trigger
+---@field event fun(self: self, event: "玩家-重连", callback: fun(trg: Trigger, player: Player)):Trigger
+---@field event fun(self: self, event: "玩家-暂时离开", callback: fun(trg: Trigger, player: Player)):Trigger
+---@field event fun(self: self, event: "玩家-回到游戏", callback: fun(trg: Trigger, player: Player)):Trigger
+---@field event fun(self: self, event: "玩家-放弃重连", callback: fun(trg: Trigger, player: Player)):Trigger
+---@field event fun(self: self, event: "玩家-修改设置", callback: fun(trg: Trigger, player: Player)):Trigger
+---@field event fun(self: self, event: "游戏-阶段切换", callback: fun(trg: Trigger, status: number)):Trigger
+---@field event fun(self: self, event: "自定义UI-消息", callback: fun(trg: Trigger, message: string)):Trigger
+---@field event fun(self: self, event: "玩家-切换场景", callback: fun(trg: Trigger, player: Player, sceneName: string)):Trigger
+---@field event fun(self: self, event: "单位-切换场景", callback: fun(trg: Trigger, unit: Unit, sceneName: string)):Trigger
+---@field event fun(self: self, event: "游戏-加载场景", callback: fun(trg: Trigger, sceneName: string)):Trigger
+---@field event fun(self: self, event: "游戏-属性变化", callback: fun(trg: Trigger, key: string, value: string)):Trigger
+---@field event fun(self: self, event: "游戏-字符串属性变化", callback: fun(trg: Trigger, key: string, value: string)):Trigger
+---@field event fun(self: self, event: "玩家-属性变化", callback: fun(trg: Trigger, player: Player, key: string, value: string)):Trigger
+---@field event fun(self: self, event: "玩家-数值属性变化", callback: fun(trg: Trigger, player: Player, key: string, value: number)):Trigger
+---@field event fun(self: self, event: "玩家-字符串属性变化", callback: fun(trg: Trigger, player: Player, key: string, value: string)):Trigger
+---@field event fun(self: self, event: "单位-属性变化", callback: fun(trg: Trigger, unit: Unit, key: string, value: string)):Trigger
+---@field event fun(self: self, event: "单位-属性改变", callback: fun(trg: Trigger, unit: Unit, key: string, value: string)):Trigger
+---@field event fun(self: self, event: "单位-数值属性变化", callback: fun(trg: Trigger, unit: Unit, key: string, value: number)):Trigger
+---@field event fun(self: self, event: "单位-字符串属性变化", callback: fun(trg: Trigger, unit: Unit, key: string, value: string)):Trigger
+---@field event fun(self: self, event: "Src-PostCacheInit", callback: fun(trg: Trigger)):Trigger
+---@field event fun(self: self, event: "对话-开始", callback: fun(trg: Trigger, player: Player, dialog: any)):Trigger
+---@field event fun(self: self, event: "对话-结束", callback: fun(trg: Trigger, player: Player, dialog: any)):Trigger
+---@field event fun(self: self, event: "对话-跳过", callback: fun(trg: Trigger, player: Player, dialog: any)):Trigger
+---@field event fun(self: self, event: "对话-选择", callback: fun(trg: Trigger, player: Player, dialog: any, choice: number)):Trigger
+---@field event fun(self: self, event: "联合场景区域通知", callback: fun(trg: Trigger, unit: Unit, region: Region)):Trigger
+---@field event fun(self: self, event: "技能-建造预放置开始", callback: fun(trg: Trigger, unit: Unit, skill: Skill, point: Point)):Trigger
+---@field event fun(self: self, event: "技能-建造预放置取消", callback: fun(trg: Trigger, unit: Unit, skill: Skill)):Trigger
+---@field event fun(self: self, event: "技能-建造预放置确认", callback: fun(trg: Trigger, unit: Unit, skill: Skill, point: Point)):Trigger
+---@field event fun(self: self, event: "游戏-消息提示显示时", callback: fun(trg: Trigger, message: string, duration: number)):Trigger
+---@field event fun(self: self, event: string, callback: fun(trg: Trigger, ...: any)):Trigger
+
+
+---@class Skill
+---@field event fun(self: Skill, event: "技能-施法引导", callback: fun(trg: Trigger, unit: Unit, cast: Skill)):Trigger
+---@field event fun(self: Skill, event: "技能-施法出手", callback: fun(trg: Trigger, unit: Unit, cast: Skill)):Trigger
+---@field event fun(self: Skill, event: "技能-施法完成", callback: fun(trg: Trigger, unit: Unit, cast: Skill)):Trigger
+---@field event fun(self: Skill, event: "技能-施法停止", callback: fun(trg: Trigger, unit: Unit, cast: Skill)):Trigger
+---@field event fun(self: Skill, event: "技能-冷却完成", callback: fun(trg: Trigger, unit: Unit, skill: Skill)):Trigger
+---@field event fun(self: Skill, event: "技能-施法失败", callback: fun(trg: Trigger, unit: Unit, cast: Skill, failedCode: number)):Trigger

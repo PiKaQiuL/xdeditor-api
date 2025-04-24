@@ -1,0 +1,10 @@
+---@meta EffectParam
+
+
+
+---
+---
+---
+---@class EffectParam
+---
+
