@@ -72,7 +72,7 @@ function Mover:remove() end
 ---
 ---如果是追踪运动，那么这个值的类型必须是（unit）。如果是直线运动，那么这是个可选参数，会在angle与distance中用到这个值。
 ---
----@field target Point | Unit
+---@field target? Point | Unit
 ---
 ---运动单位
 ---
@@ -161,7 +161,7 @@ function Mover:remove() end
 --- - 友方 碰撞友方单位
 --- - 全部 碰撞所有单位
 ---
----@field hit_type HitType
+---@field hit_type? HitType
 ---
 ---碰撞范围
 ---
@@ -171,7 +171,7 @@ function Mover:remove() end
 ---
 ---默认值为0。设置其它值将会影响轰击目标时的验证半径。最终验证半径由目标单位碰撞半径[CollisionRadius]、投射物碰撞范围[hit_area]及投射物附加轰击范围[add_impact_area]之和决定
 ---
----@field add_impact?_area number
+---@field add_impact_area? number
 ---
 ---碰撞同一个单位
 ---
