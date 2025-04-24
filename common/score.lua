@@ -1,6 +1,34 @@
 ---@meta Score
 
 
+---
+---云变量
+---
+---@class Score
+Score = {}
+
+---
+---获得一个提交对象
+---
+---除了统计，所有的修改操作都必须在提交对象上进行。可以把有关联的，必须同时成功的修改操作放在同一个提交对象里。
+---
+---@return Commit
+function Score.get_commit() end
+
+
+
+---
+---
+---@class Commit
+local Commit = {}
+
+---
+---
+---
+---@param table any
+function Commit.set(table) end
+
+
 
 ---
 ---云变量id
