@@ -138,17 +138,6 @@ function Point:path_distance(other) end
 ---@return CollisionFlags 标记
 function Point:get_collision_flags() end
 
----@alias CollisionFlagsStatic
----| "Unbuildable"      # 不可建造
----| "Cliff"            # 悬崖
----| "Lower"            # 低于地表的障碍物
----| "Unwalkable"       # 不可行走
----| "Unfloatable"      # 不可漂浮
----| "Unamphibious"     # 不可两栖
----| "UnItemplacable"   # 不可放置物品
----| "Unflyable"        # 不可飞行
----| "UnPeonHarvest"    # 不可采集区域
----| "Higher"           # 高于地表的障碍物
 
 ---
 ---碰撞标记集合
