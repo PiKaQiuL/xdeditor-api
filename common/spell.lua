@@ -40,6 +40,8 @@
 ---
 local Skill = {}
 
+--#region 事件
+
 ---
 ---获得事件
 ---
@@ -194,6 +196,11 @@ function Skill:on_spell_fish_stop() end
 ---接近目标
 ---
 function Skill:on_cast_approach() end
+
+
+--#endregion 事件
+
+--#region 方法
 
 ---
 ---激活冷却
@@ -532,7 +539,22 @@ function Skill:get_skill_max_cd() end
 ---@return number
 function Skill:get_multi_phase_max_cd(phase) end
 
+---
+---创建直线运动
+---
+---@param mover_data MoverData
+---@return Mover
+function Skill:mover_line(mover_data) end
 
+---
+---创建追踪运动
+---
+---@param mover_data MoverData
+---@return Mover
+function Skill:mover_target(mover_data) end
+
+
+--#endregion 方法
 
 ---
 ---@type table<string, Skill>
