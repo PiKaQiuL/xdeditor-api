@@ -49,3 +49,37 @@ function Timer:set_current_time(time) end
 function Timer:set_remaining_time(time) end
 
 
+
+
+---
+---等待
+---
+---@param timeout number 毫秒
+---@param on_timer fun(timer: Timer)
+---@return Timer
+function base.wait(timeout, on_timer) end
+
+---
+---循环
+---
+---@param timeout number 毫秒
+---@param on_timer fun(timer: Timer)
+---@return Timer
+function base.loop(timeout, on_timer) end
+
+
+---
+---每隔一段时间循环执行动作(限定次数)
+---
+---@param timeout number 毫秒
+---@param count number 次数
+---@param on_time fun(timet: Timer)
+---@return Timer
+function base.time(timeout, count, on_time) end
+
+---
+---下一帧运行
+---
+---@param cb fun()
+function base.next(cb) end
+
