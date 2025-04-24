@@ -3,6 +3,7 @@
 ---@class UnitGroup
 local UnitGroup = {}
 
+
 ---获取单位组长度
 ---@return number 单位组长度
 function UnitGroup:get_length() end

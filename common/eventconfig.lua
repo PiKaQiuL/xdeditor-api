@@ -1,5 +1,6 @@
 ---@meta EventConfig
 
+
 ---@class base.Game
 ---@field event fun(self: self, event: "单位-初始化", callback: fun(trg: Trigger, unit: Unit)):Trigger
 ---@field event fun(self: self, event: "单位-创建", callback: fun(trg: Trigger, unit: Unit)):Trigger

@@ -8,6 +8,7 @@
 ---@field debug fun(...)
 log = {}
 
+
 ---
 ---
 ---@generic Any: any

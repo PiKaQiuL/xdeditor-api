@@ -4,6 +4,7 @@
 local Game = {}
 base.game = Game
 
+
 ---
 ---发送事件
 ---

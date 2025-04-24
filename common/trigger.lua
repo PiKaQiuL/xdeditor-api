@@ -7,12 +7,6 @@ local Trigger = {}
 
 
 
-
-
-
-
-
-
 ---@class IEventNotify
 ---
 ---

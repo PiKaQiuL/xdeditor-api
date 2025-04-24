@@ -21,6 +21,7 @@ local p = base.ui.panel('s')({
     }
 })
 
+
 local ui, bind = base.ui.create(p)
 
 base.game:event("你好", function(trig, ...)

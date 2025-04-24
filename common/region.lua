@@ -3,6 +3,7 @@
 ---@class Region
 local Region = {}
 
+
 ---
 ---
 ---获取区域内一个随机点。

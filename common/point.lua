@@ -1,5 +1,6 @@
 ---@meta Point
 
+
 ---点
 ---@class Point
 local Point = {}

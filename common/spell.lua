@@ -4,6 +4,7 @@
 ---@alias SpellID string
 
 
+
 ---
 ---@class Skill
 ---
