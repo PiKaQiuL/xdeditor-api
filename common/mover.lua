@@ -66,7 +66,7 @@ function Mover:remove() end
 ---
 ---会被设置为创建时使用的技能对象，不需要再次设置。
 ---
----@field skill Skill
+---@field skill? Skill
 ---
 ---目标
 ---
@@ -78,37 +78,37 @@ function Mover:remove() end
 ---
 ---进行运动的单位。mover与model这2个参数需要设置其一，运动才能创建成功
 ---
----@field mover Unit
+---@field mover? Unit
 ---
 ---单位名
 ---
 ---创建一个临时单位作为运动单位，当运动结束后该单位会被移除。mover与model这2个参数需要设置其一，运动才能创建成功
 ---
----@field model UnitID
+---@field model? UnitID
 ---
 ---起点
 ---
 ---如果不填，则使用mover的位置或source的位置作为起点
 ---
----@field start Point
+---@field start? Point
 ---
 ---方向
 ---
 ---运动的初始方向，若不填则为运动单位到target的方向
 ---
----@field angle number
+---@field angle? number
 ---
 ---距离
 ---
 ---直线运动的运动距离
 ---
----@field distance number
+---@field distance? number
 ---
 ---最大距离
 ---
 ---追踪运动的最大距离。默认为运动单位到target距离的2倍
 ---
----@field max_distance number
+---@field max_distance? number
 ---
 ---速度
 ---
@@ -116,7 +116,7 @@ function Mover:remove() end
 ---
 ---加速度
 ---
----@field accel number
+---@field accel? number
 ---
 ---速度下限
 ---
@@ -128,31 +128,31 @@ function Mover:remove() end
 ---
 ---一般配合加速度使用，使运动速度不会大于该值
 ---
----@field max_speed number
+---@field max_speed? number
 ---
 ---起点高度
 ---
 ---默认为0
 ---
----@field height number
+---@field height? number
 ---
 ---终点高度(number) 离z=0平面
 ---
 ---直线运动的默认值为height，追踪运动的默认值为target的受击高度
 ---
----@field force_height number
+---@field force_height? number
 ---
 ---抛物线高度
 ---
 ---抛物线的顶点高度，默认为0
 ---
----@field parabola_height number
+---@field parabola_height? number
 ---
 ---转身速度
 ---
 ---追踪运动每秒改变朝向的速度限制。不填表示无限制
 ---
----@field turn_speed number
+---@field turn_speed? number
 ---
 ---碰撞类型
 ---
@@ -165,71 +165,71 @@ function Mover:remove() end
 ---
 ---碰撞范围
 ---
----@field hit_area number
+---@field hit_area? number
 ---
 ---附加轰击范围
 ---
 ---默认值为0。设置其它值将会影响轰击目标时的验证半径。最终验证半径由目标单位碰撞半径[CollisionRadius]、投射物碰撞范围[hit_area]及投射物附加轰击范围[add_impact_area]之和决定
 ---
----@field add_impact_area number
+---@field add_impact?_area number
 ---
 ---碰撞同一个单位
 ---
 ---默认为false
 ---
----@field hit_same boolean
+---@field hit_same? boolean
 ---
 ---碰撞追踪目标
 ---
 ---对于追踪运动，当为true时，运动单位与target的距离小于[hit_area]时运动完成；当为false时，运动单位需要到达target的位置时运动完成。默认为true
 ---
----@field hit_target boolean
+---@field hit_target? boolean
 ---
 ---碰撞地形
 ---
 ---当为true时，当运动单位到达静态碰撞时会触发on_block事件。若没有注册此事件，则会移除运动
 ---
----@field block boolean
+---@field block? boolean
 ---
 ---优先级
 ---
----@field priority number
+---@field priority? number
 ---
 ---被动运动
 ---
 ---默认为false
 ---
----@field passive boolean
+---@field passive? boolean
 ---
 ---分别是mover不能通过的碰撞类型和mover需要的碰撞类型(通行标记), 这两个字段同时生效所以这两个表不能有交集 标记可以为
 ---
----@field pathing_bit_prevent CollisionFlagsStatic[]
+---@field pathing_bit_prevent? CollisionFlagsStatic[]
 ---
----@field pathing_bit_requird CollisionFlagsStatic[]
+---@field pathing_bit_requird? CollisionFlagsStatic[]
 ---
 ---碰撞地形事件
 ---
 ---只有当block设置为true时才可能触发此事件。在事件中返回true可以移除运动
 ---
----@field on_block fun(self: self):boolean
+---@field on_block? fun(self: self):boolean
 ---
 ---完成事件
 ---
 ---当直线运动将distance跑完，或是追踪运动追上target后触发。比on_remove先触发
 ---
----@field on_finish fun(self: self)
+---@field on_finish? fun(self: self)
 ---
 ---碰撞单位事件
 ---
 ---只有设置了hit_type后才可能触发此事件。在事件中返回true可以移除运动
 ---
----@field on_hit fun(self: self, unit: Unit): boolean
+---@field on_hit? fun(self: self, unit: Unit): boolean
 ---
 ---移除事件
 ---
 ---运动被移除时触发此事件
 ---
----@field on_remove fun(self: self)
+---@field on_remove? fun(self: self)
 ---
 
 
