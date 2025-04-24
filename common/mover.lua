@@ -112,7 +112,7 @@ function Mover:remove() end
 ---
 ---速度
 ---
----@field speed number
+---@field speed? number
 ---
 ---加速度
 ---
