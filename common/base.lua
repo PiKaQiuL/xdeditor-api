@@ -2,7 +2,7 @@
 
 
 ---@class base
-local base = {
+base = {
 
     ---@type base.Game
     game = nil,

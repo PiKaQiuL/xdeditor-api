@@ -75,7 +75,7 @@ function base.loop(timeout, on_timer) end
 ---@param count number 次数
 ---@param on_time fun(timet: Timer)
 ---@return Timer
-function base.time(timeout, count, on_time) end
+function base.timer(timeout, count, on_time) end
 
 ---
 ---下一帧运行

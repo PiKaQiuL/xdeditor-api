@@ -86,8 +86,20 @@ function Unit:blink_ex(target_pos) end
 ---@param item_id ItemID
 ---@param point Point | Unit
 ---@return Item
----@deprecated 弃用
-function Unit.create_item(item_id, point) end
+---@deprecated
+function Unit:create_item(item_id, point) end
+
+---
+---创建单位
+---
+---@param unit_id UnitID | Unit
+---@param where Point
+---@param face number
+---@param on_init? fun(new_unit: Unit)
+---@return Unit
+----@deprecated
+function Unit:create_unit(unit_id, where, face, on_init) end
+
 
 ---
 ---单位是否可以攻击目标。
