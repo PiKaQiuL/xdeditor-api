@@ -2,10 +2,6 @@
 ---@meta Log
 
 ---@class Log
----@field info fun(...)
----@field warn fun(...)
----@field error fun(...)
----@field debug fun(...)
 log = {}
 
 
